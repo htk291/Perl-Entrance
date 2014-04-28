@@ -1,0 +1,22 @@
+---
+title: OSについて
+by: @_papix_
+---
+https://github.com/perl-entrance-org/workshop-2014-01/blob/master/slide1.md
+
+
+---
+title: Perlという言語について
+by:  @xtetsuji
+---
+
+■勉強会
+・Perl Calual
+・Perl Beginners
+
+■書籍
+・モダンPerl入門
+・CPANモジュールガイド
+・雅なPerl
+
+perl -MAcme::FizzBuzz -E ''
