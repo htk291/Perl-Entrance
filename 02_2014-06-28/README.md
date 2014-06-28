@@ -62,9 +62,29 @@ Switch.pmもつかうな。
     ```
 #### and,or / &&,||
 
-演算子の優先順位が違う
+演算子の優先順位が違う  
 だいたい`&&`と`||`をつかう
 
 ## 配列
 
 @rray
+
+### reverse関数
+
+```
+my @array = reverse(1..5);
+print @array;   # => 5 4 3 2 1
+```
+
+## for文
+
+```
+for my $i ( 0..$#array ) {
+    print "$array[$i]\n";
+}
+
+for my $i ( 0.. scalar @array -1 ) {
+    print "$array[$i]\n";
+}
+```
+
