@@ -45,4 +45,9 @@ Execution of 9x_constant.pl aborted due to compilation errors.
 
 ## 制御構文
 
+`switch`はないとおもえ！
+Switch.pmもつかうな。
+
+→ if-elsif-else でカバー
+
 
