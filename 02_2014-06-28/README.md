@@ -13,11 +13,36 @@ $cala
 
 ## 標準入力
 
-`chomp`で改行文字を削除する
+### chomp
 
-## 演算子
+`chomp`で改行文字を削除する
 
 数値は`chomp`しなくても計算できる？  
     →演算子は先頭の数値をみて、後ろの文字列を無視しようとするので  
     たまたまうまくいってるだけ。`chomp`したほうがよい
+
+`chomp`の結果はchompした件数なので(cf. 初めてのPerl p48)
+
+```
+chomp (my $num1 = <STDIN>);
+```
+
+こんな感じにしなくちゃいけない
+
+## 演算子
+
+## 定数
+ 
+``` constant.pl
+use constant Pi => 3.14;
+Pi = 5;
+```
+
+```
+Can't modify constant item in scalar assignment at 9x_constant.pl line 3, near "5;"
+Execution of 9x_constant.pl aborted due to compilation errors.
+```
+
+## 制御構文
+
 
