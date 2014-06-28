@@ -90,4 +90,10 @@ for my $i ( 0.. scalar @array -1 ) {
     print "$array[$i]\n";
 }
 ```
+## perldoc
 
+```
+ $perldoc -v $/
+```
+
+みたいな感じ
