@@ -73,8 +73,11 @@ Switch.pmもつかうな。
 
 ```
 my @array = reverse(1..5);
-print @array;   # => 5 4 3 2 1
+print "@array";   # => 5 4 3 2 1
 ```
+
+* `@array`だと、54321
+* `"@array"`だと、5 4 3 2 1
 
 ## for文
 
