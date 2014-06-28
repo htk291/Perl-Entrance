@@ -50,4 +50,21 @@ Switch.pmもつかうな。
 
 → if-elsif-else でカバー
 
+### 文字列比較
 
+文字列の比較順は`man ascii`で順番みれる
+
+#### lc, uc
+
+    ```
+    my $answer = lc 'MILKYHOLMES';
+    print $answer;  # => milkyholmes
+    ```
+#### and,or / &&,||
+
+演算子の優先順位が違う
+だいたい`&&`と`||`をつかう
+
+## 配列
+
+@rray

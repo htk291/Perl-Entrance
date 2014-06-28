@@ -5,8 +5,8 @@ use utf8;
 use Acme::MilkyHolmes;
 
 my ($sherlock, $nero, $elly, $cordelia)  = Acme::MilkyHolmes->members();
-
 my $answer = 'milkyholmes';
+
 chomp (my $input = <STDIN>);
 
 if ($input eq $answer) {
