@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use List::Util qw/ reduce /;
 
 &main unless caller;
 
@@ -16,6 +17,9 @@ sub main {
 
     print "div >> ";
     print div(4, 5) . $/;
+
+    print "addx >> ";
+    print addx(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) . $/;
 }
 
 sub add {
@@ -36,5 +40,9 @@ sub mul {
 sub div {
     my ($left, $right) = @_;
     return $left / $right;
+}
+
+sub addx {
+    return reduce { $a + $b } @_;
 }
 
