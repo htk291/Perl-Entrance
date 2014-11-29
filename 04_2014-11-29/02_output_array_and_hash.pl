@@ -19,6 +19,6 @@ sub output_refs {
     }
 
     for my $key (keys %$dressing_pafe) {
-        print "drepafe : $key : $dressing_pafe->{$key}" . $/;
+        print "drepafe : $key => $dressing_pafe->{$key}" . $/;
     }
 }
