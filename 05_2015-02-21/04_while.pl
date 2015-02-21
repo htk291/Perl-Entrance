@@ -16,7 +16,10 @@ sub main {
 
 sub calc_string {
     my $arg = shift;
-    print "ERROR!!\n" unless $arg =~ /^(\d+) ([+\-*\/\%]) (\d+)$/;
+    unless ( $arg =~ /^(\d+) ([+\-*\/\%]) (\d+)$/ ) {
+        print "ERROR!!\n";
+        return;
+    }
 
     print ( $1 + $3."\n" ) if $2 eq '+';
     print ( $1 - $3."\n" ) if $2 eq '-';
