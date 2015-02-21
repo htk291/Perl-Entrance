@@ -20,7 +20,8 @@ sub main {
 
 sub calc {
     for my $v (@_) {
-        return unless $v =~ /\d/;
+        return unless $v =~ /^\d+$/;
+        #return unless $v =~ /\d/;
     }
     my ($x, $y) = @_;
 

@@ -2,8 +2,8 @@
 
 ## 先頭へ移動
 
-<Ctrl> a 
+ctrl + a 
 
 ## カーソルより右を削除
 
-<Ctrl> k
+ctrl + k
