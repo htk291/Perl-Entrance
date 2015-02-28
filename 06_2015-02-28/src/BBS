@@ -1,0 +1,63 @@
+#!/usr/bin/env perl
+use Mojolicious::Lite;
+
+my $params = [];
+get '/' => sub {
+  my $self = shift;
+  $self->stash(params => $params);
+  $self->render('index');
+};
+
+post '/post' => sub {
+  my $self = shift;
+  my $name = $self->param('name');
+  my $email = $self->param('email');
+  my $entry = $self->param('body');
+  my $hash = {name =>$name, email => $email, entry => $entry};
+
+  if ($email eq 'age') {
+      unshift @{$params},  $hash;
+  } else {
+      push @{$params},  $hash;
+  }
+  $self->stash(params => $params);
+  $self->redirect_to('/');
+};
+
+app->start;
+__DATA__
+
+@@ index.html.ep
+% layout 'default';
+% title 'Welcome';
+%= form_for '/post' => method => 'POST' => begin 
+    %= label_for first_name => 'name'
+    %= text_field 'name'
+    %= label_for email => 'email'
+    %= text_field 'email'
+    %= label_for body => 'body'
+    %= text_field 'body'
+    %= submit_button '投稿する'
+% end
+% for my $param (@$params) {
+    <div>
+        <span>
+            <%= $param->{name} %>
+        </span>
+        <span>
+            <%= $param->{email} %>
+        </span>
+        <span>
+            <%= $param->{entry} %>
+        </span>
+    </div>
+% }
+
+
+@@ layouts/default.html.ep
+<!DOCTYPE html>
+<html>
+  <head><title><%= title %></title></head>
+  <body><%= content %></body>
+</html>
+
