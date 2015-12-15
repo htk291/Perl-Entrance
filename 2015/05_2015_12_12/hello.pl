@@ -28,7 +28,7 @@ app->start;
 __DATA__
 
 @@ index.html.ep
-% layout 'default';
+% layout 'default'; # Comment, useful for debugging
 <h1>Welcome to the Mojolicious real-time web framework!</h1>
 To learn more, you can browse through the documentation
 <%= link_to 'here' => '/perldoc' %>.
@@ -40,21 +40,11 @@ To learn more, you can browse through the documentation
   <body><%= content %></body>
 </html>
 
-@@ profile.html.ep
-<html>
-<head><title><%= $name %>のプロフィール</title></head>
-<body style='padding: 30px;'>
-  私の名前は<%= $name %>です.<br>
-  趣味は<%= $hobby %>で, 好きなプログラミング言語は<%= $language %>です.
-</body>
-</html>
-
 @@ fizzbuzz.html.ep
 <html>
 <head><title>FizzBuzz</title></head>
 <body>
 
-% {
 %  for my $i (1 .. 100) {
 %    if ($i % 15 == 0) {
 %=      'FizzBuzz';
@@ -69,3 +59,12 @@ To learn more, you can browse through the documentation
 %  }
 </body>
 </html>
+
+@@ profile.html.ep # 新しいテンプレートを用意する
+% layout 'default';
+% title '出力'; # タイトルを変更
+%= form_for '/post' => method => 'POST' => begin # 投稿先などを変更
+  %= text_field 'body'
+  %= submit_button '投稿する'
+% end
+<p><%= $entry %></p>
